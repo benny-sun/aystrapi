@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tag_faq_customizeds",
+  "info": {
+    "singularName": "tag-faq-customized",
+    "pluralName": "tag-faq-customizeds",
+    "displayName": "Tag FAQ Customized"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PageName": {
+      "type": "string"
+    },
+    "ListPageType": {
+      "type": "string"
+    },
+    "listId": {
+      "type": "integer"
+    },
+    "TagCode": {
+      "type": "string"
+    },
+    "FaqContents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-content.faq-content"
+    }
+  }
+}
