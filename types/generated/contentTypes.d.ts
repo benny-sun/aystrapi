@@ -434,7 +434,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Question: Schema.Attribute.Text &
+    Question: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -559,7 +559,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    OG_description: Schema.Attribute.Text &
+    OG_description: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

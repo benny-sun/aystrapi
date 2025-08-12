@@ -64,7 +64,7 @@
       }
     },
     "OG_description": {
-      "type": "text",
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
