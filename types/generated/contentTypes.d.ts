@@ -617,7 +617,7 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    listId: Schema.Attribute.Integer;
+    listId: Schema.Attribute.Integer & Schema.Attribute.Required;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway']
     > &
@@ -628,9 +628,11 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'api::tag-faq-customized.tag-faq-customized'
     > &
       Schema.Attribute.Private;
-    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
+    PageName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
-    TagCode: Schema.Attribute.String;
+    TagCode: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

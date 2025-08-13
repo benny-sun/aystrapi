@@ -13,6 +13,7 @@
   "attributes": {
     "PageName": {
       "type": "string",
+      "required": true,
       "unique": true
     },
     "ListPageType": {
@@ -26,10 +27,12 @@
       ]
     },
     "listId": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "TagCode": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "FaqContents": {
       "type": "relation",
