@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "faq_contents",
+  "collectionName": "tdk_customized_activities",
   "info": {
-    "singularName": "faq-content",
-    "pluralName": "faq-contents",
-    "displayName": "FAQ content"
+    "singularName": "tdk-customized-activity",
+    "pluralName": "tdk-customized-activities",
+    "displayName": "TDK Customized - Activity"
   },
   "options": {
     "draftAndPublish": true
@@ -15,60 +15,50 @@
     }
   },
   "attributes": {
-    "ContentName": {
+    "page_name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
+      "required": true,
       "unique": true
     },
-    "Question": {
-      "type": "richtext",
+    "type_id": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "view_id": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "meta_description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "Answer": {
-      "type": "richtext",
+    "FAQContents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-content.faq-content"
+    },
+    "extraStructuredData": {
+      "type": "json",
       "pluginOptions": {
         "i18n": {
           "localized": true
-        }
-      }
-    },
-    "countryIds": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "cityIds": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "bnbIds": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "propertyTags": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
         }
       }
     }

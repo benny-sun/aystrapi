@@ -408,6 +408,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
         };
       }>;
     ContentName: Schema.Attribute.String &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -466,14 +467,128 @@ export interface ApiFaqCustomizedFaqCustomized
       'api::faq-content.faq-content'
     >;
     ListId: Schema.Attribute.Integer;
-    ListPageType: Schema.Attribute.String;
+    ListPageType: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
+    > &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-customized.faq-customized'
     > &
       Schema.Attribute.Private;
-    PageName: Schema.Attribute.String;
+    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFaqDefaultListPageFaqDefaultListPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_default_list_pages';
+  info: {
+    displayName: 'FAQ Default - List Page';
+    pluralName: 'faq-default-list-pages';
+    singularName: 'faq-default-list-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FAQContents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-content.faq-content'
+    >;
+    IsDisplay: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    ListPageType: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-default-list-page.faq-default-list-page'
+    > &
+      Schema.Attribute.Private;
+    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFaqDefaultViewPageFaqDefaultViewPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_default_view_pages';
+  info: {
+    displayName: 'FAQ Default - View Page';
+    pluralName: 'faq-default-view-pages';
+    singularName: 'faq-default-view-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FAQContents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-content.faq-content'
+    >;
+    IsDisplay: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-default-view-page.faq-default-view-page'
+    > &
+      Schema.Attribute.Private;
+    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    Type: Schema.Attribute.Enumeration<['country', 'city', 'bnb', 'default']> &
+      Schema.Attribute.DefaultTo<'default'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_defaults';
+  info: {
+    displayName: 'FAQ default';
+    pluralName: 'faq-defaults';
+    singularName: 'faq-default';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FaqContents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-content.faq-content'
+    >;
+    IsDispaly: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    ListPageType: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway']
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-default.faq-default'
+    > &
+      Schema.Attribute.Private;
+    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -508,12 +623,511 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'api::tag-faq-customized.tag-faq-customized'
     > &
       Schema.Attribute.Private;
-    PageName: Schema.Attribute.String;
+    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     TagCode: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTdkCustomizedTagTdkCustomized
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tag_tdk_customizeds';
+  info: {
+    displayName: 'Tag TDK Customized';
+    pluralName: 'tag-tdk-customizeds';
+    singularName: 'tag-tdk-customized';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    list_id: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    list_type: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tag-tdk-customized.tag-tdk-customized'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_keywords: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_image: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    OG_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    tag_code: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTdkTemplateTagTdkTemplate
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tag_tdk_templates';
+  info: {
+    displayName: 'Tag TDK Template';
+    pluralName: 'tag-tdk-templates';
+    singularName: 'tag-tdk-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tag-tdk-template.tag-tdk-template'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_keywords: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_image: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    OG_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTdkCustomizedActivityTdkCustomizedActivity
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tdk_customized_activities';
+  info: {
+    displayName: 'TDK Customized - Activity';
+    pluralName: 'tdk-customized-activities';
+    singularName: 'tdk-customized-activity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    extraStructuredData: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    FAQContents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-content.faq-content'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tdk-customized-activity.tdk-customized-activity'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    type_id: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    view_id: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+  };
+}
+
+export interface ApiTdkCustomizedIndexTdkCustomizedIndex
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tdk_customized_indices';
+  info: {
+    displayName: 'TDK Customized - Index';
+    pluralName: 'tdk-customized-indices';
+    singularName: 'tdk-customized-index';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tdk-customized-index.tdk-customized-index'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_keywords: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_image: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTdkCustomizedListTdkCustomizedList
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tdk_customized_lists';
+  info: {
+    displayName: 'TDK Customized - List';
+    pluralName: 'tdk-customized-lists';
+    singularName: 'tdk-customized-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    list_id: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    list_type: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway', 'poi', 'region', 'cruise']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tdk-customized-list.tdk-customized-list'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_keywords: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_image: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    OG_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTdkCustomizedViewTdkCustomizedView
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tdk_customized_views';
+  info: {
+    displayName: 'TDK Customized - View';
+    pluralName: 'tdk-customized-views';
+    singularName: 'tdk-customized-view';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tdk-customized-view.tdk-customized-view'
+    >;
+    meta_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_keywords: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    OG_image: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    OG_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    view_id: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
@@ -578,12 +1192,25 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }>;
     page_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    page_type: Schema.Attribute.String &
+    page_type: Schema.Attribute.Enumeration<
+      [
+        'index',
+        'list',
+        'view',
+        'property',
+        'package-view',
+        'group-list',
+        'cruise-list',
+      ]
+    > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1107,7 +1734,16 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::faq-content.faq-content': ApiFaqContentFaqContent;
       'api::faq-customized.faq-customized': ApiFaqCustomizedFaqCustomized;
+      'api::faq-default-list-page.faq-default-list-page': ApiFaqDefaultListPageFaqDefaultListPage;
+      'api::faq-default-view-page.faq-default-view-page': ApiFaqDefaultViewPageFaqDefaultViewPage;
+      'api::faq-default.faq-default': ApiFaqDefaultFaqDefault;
       'api::tag-faq-customized.tag-faq-customized': ApiTagFaqCustomizedTagFaqCustomized;
+      'api::tag-tdk-customized.tag-tdk-customized': ApiTagTdkCustomizedTagTdkCustomized;
+      'api::tag-tdk-template.tag-tdk-template': ApiTagTdkTemplateTagTdkTemplate;
+      'api::tdk-customized-activity.tdk-customized-activity': ApiTdkCustomizedActivityTdkCustomizedActivity;
+      'api::tdk-customized-index.tdk-customized-index': ApiTdkCustomizedIndexTdkCustomizedIndex;
+      'api::tdk-customized-list.tdk-customized-list': ApiTdkCustomizedListTdkCustomizedList;
+      'api::tdk-customized-view.tdk-customized-view': ApiTdkCustomizedViewTdkCustomizedView;
       'api::tdk-template.tdk-template': ApiTdkTemplateTdkTemplate;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tdk_templates",
+  "collectionName": "tdk_customized_views",
   "info": {
-    "singularName": "tdk-template",
-    "pluralName": "tdk-templates",
-    "displayName": "TDK Template"
+    "singularName": "tdk-customized-view",
+    "pluralName": "tdk-customized-views",
+    "displayName": "TDK Customized - View"
   },
   "options": {
     "draftAndPublish": true
@@ -25,23 +25,14 @@
       "required": true,
       "unique": true
     },
-    "page_type": {
-      "type": "enumeration",
+    "view_id": {
+      "type": "integer",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "enum": [
-        "index",
-        "list",
-        "view",
-        "property",
-        "package-view",
-        "group-list",
-        "cruise-list"
-      ]
+      "required": true
     },
     "meta_title": {
       "type": "string",
@@ -76,7 +67,7 @@
       }
     },
     "OG_description": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -87,7 +78,7 @@
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     }

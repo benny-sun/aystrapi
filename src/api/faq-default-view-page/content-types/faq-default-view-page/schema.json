@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "faq_customizeds",
+  "collectionName": "faq_default_view_pages",
   "info": {
-    "singularName": "faq-customized",
-    "pluralName": "faq-customizeds",
-    "displayName": "FAQ Customized"
+    "singularName": "faq-default-view-page",
+    "pluralName": "faq-default-view-pages",
+    "displayName": "FAQ Default - View Page"
   },
   "options": {
     "draftAndPublish": true
@@ -15,23 +15,22 @@
       "type": "string",
       "unique": true
     },
-    "ListPageType": {
+    "Type": {
       "type": "enumeration",
-      "required": true,
+      "required": false,
+      "default": "default",
       "enum": [
+        "country",
         "city",
-        "area",
-        "spot",
-        "subway",
-        "region",
-        "poi",
-        "cruise"
+        "bnb",
+        "default"
       ]
     },
-    "ListId": {
-      "type": "integer"
+    "IsDisplay": {
+      "type": "boolean",
+      "required": true
     },
-    "FaqContents": {
+    "FAQContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"

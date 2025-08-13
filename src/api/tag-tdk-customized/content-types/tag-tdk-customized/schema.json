@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tdk_templates",
+  "collectionName": "tag_tdk_customizeds",
   "info": {
-    "singularName": "tdk-template",
-    "pluralName": "tdk-templates",
-    "displayName": "TDK Template"
+    "singularName": "tag-tdk-customized",
+    "pluralName": "tag-tdk-customizeds",
+    "displayName": "Tag TDK Customized"
   },
   "options": {
     "draftAndPublish": true
@@ -25,7 +25,7 @@
       "required": true,
       "unique": true
     },
-    "page_type": {
+    "list_type": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -34,14 +34,29 @@
       },
       "required": true,
       "enum": [
-        "index",
-        "list",
-        "view",
-        "property",
-        "package-view",
-        "group-list",
-        "cruise-list"
+        "city",
+        "area",
+        "spot",
+        "subway"
       ]
+    },
+    "list_id": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "tag_code": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     },
     "meta_title": {
       "type": "string",
@@ -76,7 +91,7 @@
       }
     },
     "OG_description": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -87,7 +102,7 @@
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     }

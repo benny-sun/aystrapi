@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tdk_templates",
+  "collectionName": "tag_tdk_templates",
   "info": {
-    "singularName": "tdk-template",
-    "pluralName": "tdk-templates",
-    "displayName": "TDK Template"
+    "singularName": "tag-tdk-template",
+    "pluralName": "tag-tdk-templates",
+    "displayName": "Tag TDK Template"
   },
   "options": {
     "draftAndPublish": true
@@ -25,31 +25,14 @@
       "required": true,
       "unique": true
     },
-    "page_type": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true,
-      "enum": [
-        "index",
-        "list",
-        "view",
-        "property",
-        "package-view",
-        "group-list",
-        "cruise-list"
-      ]
-    },
     "meta_title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "meta_description": {
       "type": "text",
@@ -57,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "meta_keywords": {
       "type": "string",
@@ -65,7 +49,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "OG_title": {
       "type": "string",
@@ -73,23 +58,26 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "OG_description": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "OG_image": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "required": true
     }
   }
 }

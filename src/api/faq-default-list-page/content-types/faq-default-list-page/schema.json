@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "faq_customizeds",
+  "collectionName": "faq_default_list_pages",
   "info": {
-    "singularName": "faq-customized",
-    "pluralName": "faq-customizeds",
-    "displayName": "FAQ Customized"
+    "singularName": "faq-default-list-page",
+    "pluralName": "faq-default-list-pages",
+    "displayName": "FAQ Default - List Page"
   },
   "options": {
     "draftAndPublish": true
@@ -28,10 +28,11 @@
         "cruise"
       ]
     },
-    "ListId": {
-      "type": "integer"
+    "IsDisplay": {
+      "type": "boolean",
+      "required": true
     },
-    "FaqContents": {
+    "FAQContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tag_faq_customizeds",
+  "collectionName": "faq_defaults",
   "info": {
-    "singularName": "tag-faq-customized",
-    "pluralName": "tag-faq-customizeds",
-    "displayName": "Tag FAQ Customized"
+    "singularName": "faq-default",
+    "pluralName": "faq-defaults",
+    "displayName": "FAQ default"
   },
   "options": {
     "draftAndPublish": true
@@ -16,13 +16,18 @@
       "unique": true
     },
     "ListPageType": {
-      "type": "string"
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "city",
+        "area",
+        "spot",
+        "subway"
+      ]
     },
-    "listId": {
-      "type": "integer"
-    },
-    "TagCode": {
-      "type": "string"
+    "IsDispaly": {
+      "type": "boolean",
+      "required": true
     },
     "FaqContents": {
       "type": "relation",

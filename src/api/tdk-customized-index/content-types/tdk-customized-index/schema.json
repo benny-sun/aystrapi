@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tdk_templates",
+  "collectionName": "tdk_customized_indices",
   "info": {
-    "singularName": "tdk-template",
-    "pluralName": "tdk-templates",
-    "displayName": "TDK Template"
+    "singularName": "tdk-customized-index",
+    "pluralName": "tdk-customized-indices",
+    "displayName": "TDK Customized - Index"
   },
   "options": {
     "draftAndPublish": true
@@ -22,26 +22,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "unique": true
-    },
-    "page_type": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true,
-      "enum": [
-        "index",
-        "list",
-        "view",
-        "property",
-        "package-view",
-        "group-list",
-        "cruise-list"
-      ]
+      "required": true
     },
     "meta_title": {
       "type": "string",
@@ -49,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "meta_description": {
       "type": "text",
@@ -76,7 +58,7 @@
       }
     },
     "OG_description": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
