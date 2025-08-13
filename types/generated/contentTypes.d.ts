@@ -466,7 +466,7 @@ export interface ApiFaqCustomizedFaqCustomized
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    ListId: Schema.Attribute.Integer;
+    ListId: Schema.Attribute.Integer & Schema.Attribute.Required;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
     > &
@@ -477,7 +477,9 @@ export interface ApiFaqCustomizedFaqCustomized
       'api::faq-customized.faq-customized'
     > &
       Schema.Attribute.Private;
-    PageName: Schema.Attribute.String & Schema.Attribute.Unique;
+    PageName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -616,7 +618,10 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'api::faq-content.faq-content'
     >;
     listId: Schema.Attribute.Integer;
-    ListPageType: Schema.Attribute.String;
+    ListPageType: Schema.Attribute.Enumeration<
+      ['city', 'area', 'spot', 'subway']
+    > &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

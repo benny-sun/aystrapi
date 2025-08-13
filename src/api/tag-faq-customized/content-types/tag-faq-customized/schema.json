@@ -16,7 +16,14 @@
       "unique": true
     },
     "ListPageType": {
-      "type": "string"
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "city",
+        "area",
+        "spot",
+        "subway"
+      ]
     },
     "listId": {
       "type": "integer"
