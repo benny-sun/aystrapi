@@ -22,6 +22,7 @@
           "localized": false
         }
       },
+      "maxLength": 256,
       "required": true,
       "unique": true
     },
@@ -47,7 +48,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 50000
     },
     "FAQContents": {
       "type": "relation",

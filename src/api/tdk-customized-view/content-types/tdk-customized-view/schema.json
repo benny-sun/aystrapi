@@ -22,6 +22,7 @@
           "localized": false
         }
       },
+      "maxLength": 256,
       "required": true,
       "unique": true
     },
@@ -40,7 +41,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 256
     },
     "meta_description": {
       "type": "text",
@@ -48,7 +50,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 50000
     },
     "meta_keywords": {
       "type": "string",
@@ -56,7 +59,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 256
     },
     "OG_title": {
       "type": "string",
@@ -64,7 +68,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 256
     },
     "OG_description": {
       "type": "text",
@@ -72,7 +77,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 50000
     },
     "OG_image": {
       "type": "string",
@@ -80,7 +86,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "maxLength": 256
     }
   }
 }

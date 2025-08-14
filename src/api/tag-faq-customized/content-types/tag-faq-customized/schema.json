@@ -13,6 +13,7 @@
   "attributes": {
     "PageName": {
       "type": "string",
+      "maxLength": 256,
       "required": true,
       "unique": true
     },
@@ -32,6 +33,7 @@
     },
     "TagCode": {
       "type": "string",
+      "maxLength": 256,
       "required": true
     },
     "FaqContents": {

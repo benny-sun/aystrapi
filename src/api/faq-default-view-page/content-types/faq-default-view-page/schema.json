@@ -13,6 +13,7 @@
   "attributes": {
     "PageName": {
       "type": "string",
+      "maxLength": 256,
       "unique": true
     },
     "Type": {

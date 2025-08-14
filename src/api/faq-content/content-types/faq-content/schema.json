@@ -22,6 +22,7 @@
           "localized": false
         }
       },
+      "maxLength": 256,
       "unique": true
     },
     "Question": {
@@ -30,7 +31,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 50000
     },
     "Answer": {
       "type": "richtext",
@@ -38,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 50000
     },
     "countryIds": {
       "type": "string",
