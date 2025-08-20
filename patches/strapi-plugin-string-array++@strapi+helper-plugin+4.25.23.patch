@@ -1,0 +1,35 @@
+diff --git a/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.js b/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.js
+index 124764c..bf7b2a8 100644
+--- a/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.js
++++ b/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.js
+@@ -498,7 +498,7 @@ const CheckPagePermissions = ({
+     return /* @__PURE__ */ jsxRuntime.jsx(LoadingIndicatorPage, {});
+   }
+   if (canAccess === false) {
+-    return /* @__PURE__ */ jsxRuntime.jsx(reactRouterDom.Redirect, { to: "/" });
++    return /* @__PURE__ */ jsxRuntime.jsx(reactRouterDom.Navigate, { to: "/" });
+   }
+   return /* @__PURE__ */ jsxRuntime.jsx(jsxRuntime.Fragment, { children });
+ };
+diff --git a/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.mjs b/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.mjs
+index ea96757..6e3b7e0 100644
+--- a/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.mjs
++++ b/node_modules/strapi-plugin-string-array/node_modules/@strapi/helper-plugin/dist/index.mjs
+@@ -3,7 +3,7 @@ import { EmptyStateLayout as EmptyStateLayout$1, Flex, Alert, Loader, Dialog, Bo
+ import { ExclamationMarkCircle, Trash, CarretDown, EmptyDocuments, EmptyPictures, EmptyPermissions, Cross, Plus, Eye, EyeStriked, Search, Refresh, Clock, Minus } from "@strapi/icons";
+ import { useIntl } from "react-intl";
+ import { useQuery as useQuery$1, useQueries } from "react-query";
+-import { Redirect, useLocation, useHistory, NavLink } from "react-router-dom";
++import { Navigate, useLocation, useNavigate, NavLink } from "react-router-dom";
+ import * as React from "react";
+ import { useMemo, useCallback, useState, useEffect, useRef } from "react";
+ import { Link as Link$1, LinkButton as LinkButton$1 } from "@strapi/design-system/v2";
+@@ -465,7 +465,7 @@ const CheckPagePermissions = ({
+     return /* @__PURE__ */ jsx(LoadingIndicatorPage, {});
+   }
+   if (canAccess === false) {
+-    return /* @__PURE__ */ jsx(Redirect, { to: "/" });
++    return /* @__PURE__ */ jsx(Navigate, { to: "/" });
+   }
+   return /* @__PURE__ */ jsx(Fragment, { children });
+ };

@@ -2,7 +2,7 @@ services:
   strapi:
     container_name: strapi
     build: .
-    image: aystrapi:latest
+    image: aystrapi-dev:latest
     restart: unless-stopped
     env_file: .env
     environment:
