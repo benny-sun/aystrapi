@@ -467,6 +467,11 @@ export interface ApiFaqCustomizedFaqCustomized
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -475,20 +480,35 @@ export interface ApiFaqCustomizedFaqCustomized
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    ListId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    ListId: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
     > &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-customized.faq-customized'
-    > &
-      Schema.Attribute.Private;
+    >;
     PageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
@@ -510,6 +530,11 @@ export interface ApiFaqDefaultListPageFaqDefaultListPage
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -518,19 +543,34 @@ export interface ApiFaqDefaultListPageFaqDefaultListPage
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDisplay: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    IsDisplay: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
     > &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-default-list-page.faq-default-list-page'
-    > &
-      Schema.Attribute.Private;
+    >;
     PageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
@@ -552,6 +592,11 @@ export interface ApiFaqDefaultViewPageFaqDefaultViewPage
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -560,20 +605,35 @@ export interface ApiFaqDefaultViewPageFaqDefaultViewPage
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDisplay: Schema.Attribute.Boolean & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    IsDisplay: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-default-view-page.faq-default-view-page'
-    > &
-      Schema.Attribute.Private;
+    >;
     PageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     Type: Schema.Attribute.Enumeration<['country', 'city', 'bnb', 'default']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.DefaultTo<'default'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -591,6 +651,11 @@ export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -599,19 +664,34 @@ export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDispaly: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    IsDispaly: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway']
     > &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-default.faq-default'
-    > &
-      Schema.Attribute.Private;
+    >;
     PageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
@@ -633,6 +713,11 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -641,26 +726,46 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    listId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    listId: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ListPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway']
     > &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::tag-faq-customized.tag-faq-customized'
-    > &
-      Schema.Attribute.Private;
+    >;
     PageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     TagCode: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 256;
       }>;
