@@ -418,7 +418,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     countryIds: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -510,7 +510,7 @@ export interface ApiFaqCustomizedFaqCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -572,7 +572,7 @@ export interface ApiFaqDefaultListPageFaqDefaultListPage
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -625,7 +625,7 @@ export interface ApiFaqDefaultViewPageFaqDefaultViewPage
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     Type: Schema.Attribute.Enumeration<['country', 'city', 'bnb', 'default']> &
@@ -693,7 +693,7 @@ export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -756,7 +756,7 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     TagCode: Schema.Attribute.String &
@@ -767,7 +767,7 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -832,7 +832,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -841,7 +841,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -859,7 +859,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -868,7 +868,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -879,7 +879,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     tag_code: Schema.Attribute.String &
@@ -890,7 +890,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -941,7 +941,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -951,7 +951,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_description: Schema.Attribute.Text &
       Schema.Attribute.Required &
@@ -971,7 +971,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -981,7 +981,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -992,7 +992,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1054,7 +1054,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     type_id: Schema.Attribute.Integer &
@@ -1116,7 +1116,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1125,7 +1125,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -1143,7 +1143,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1152,7 +1152,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1162,7 +1162,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1221,14 +1221,14 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    meta_keywords: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1237,7 +1237,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -1255,7 +1255,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1264,7 +1264,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1275,7 +1275,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1325,7 +1325,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1334,7 +1334,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -1352,7 +1352,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1361,7 +1361,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1372,7 +1372,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1428,7 +1428,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     meta_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1437,16 +1437,16 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.RichText &
+    OG_description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        minLength: 50000;
+        maxLength: 50000;
       }>;
     OG_image: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1455,7 +1455,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     OG_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1464,7 +1464,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1475,7 +1475,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 255;
       }>;
     page_type: Schema.Attribute.Enumeration<
       [

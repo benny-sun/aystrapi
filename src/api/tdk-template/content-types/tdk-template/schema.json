@@ -22,7 +22,7 @@
           "localized": false
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true,
       "unique": true
     },
@@ -51,7 +51,7 @@
           "localized": true
         }
       },
-      "maxLength": 256
+      "maxLength": 255
     },
     "meta_description": {
       "type": "text",
@@ -69,7 +69,7 @@
           "localized": true
         }
       },
-      "maxLength": 256
+      "maxLength": 255
     },
     "OG_title": {
       "type": "string",
@@ -78,16 +78,16 @@
           "localized": true
         }
       },
-      "maxLength": 256
+      "maxLength": 255
     },
     "OG_description": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "minLength": 50000
+      "maxLength": 50000
     },
     "OG_image": {
       "type": "string",
@@ -96,7 +96,7 @@
           "localized": true
         }
       },
-      "maxLength": 256
+      "maxLength": 255
     }
   }
 }

@@ -22,7 +22,7 @@
           "localized": false
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true,
       "unique": true
     },
@@ -33,7 +33,7 @@
           "localized": true
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true
     },
     "meta_description": {
@@ -53,7 +53,7 @@
           "localized": true
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true
     },
     "OG_title": {
@@ -63,7 +63,7 @@
           "localized": true
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true
     },
     "OG_description": {
@@ -83,7 +83,7 @@
           "localized": false
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true
     }
   }

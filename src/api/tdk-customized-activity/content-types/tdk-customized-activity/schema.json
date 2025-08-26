@@ -22,7 +22,7 @@
           "localized": false
         }
       },
-      "maxLength": 256,
+      "maxLength": 255,
       "required": true,
       "unique": true
     },
