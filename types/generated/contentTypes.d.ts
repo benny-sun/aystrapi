@@ -389,7 +389,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    Answer: Schema.Attribute.RichText &
+    answer: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -410,7 +410,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    ContentName: Schema.Attribute.String &
+    contentName: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -441,7 +441,7 @@ export interface ApiFaqContentFaqContent extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Question: Schema.Attribute.RichText &
+    question: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -476,24 +476,24 @@ export interface ApiFaqCustomizedFaqCustomized
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FaqContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    ListId: Schema.Attribute.Integer &
+    listId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    ListPageType: Schema.Attribute.Enumeration<
+    listPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -501,12 +501,12 @@ export interface ApiFaqCustomizedFaqCustomized
       'oneToMany',
       'api::faq-customized.faq-customized'
     >;
-    PageName: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
@@ -539,24 +539,24 @@ export interface ApiFaqDefaultListPageFaqDefaultListPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FAQContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDisplay: Schema.Attribute.Boolean &
+    isDisplay: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    ListPageType: Schema.Attribute.Enumeration<
+    listPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'region', 'poi', 'cruise']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -564,11 +564,11 @@ export interface ApiFaqDefaultListPageFaqDefaultListPage
       'oneToMany',
       'api::faq-default-list-page.faq-default-list-page'
     >;
-    PageName: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
@@ -601,15 +601,15 @@ export interface ApiFaqDefaultViewPageFaqDefaultViewPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FAQContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDisplay: Schema.Attribute.Boolean &
+    isDisplay: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -617,21 +617,21 @@ export interface ApiFaqDefaultViewPageFaqDefaultViewPage
       'oneToMany',
       'api::faq-default-view-page.faq-default-view-page'
     >;
-    PageName: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Type: Schema.Attribute.Enumeration<['country', 'city', 'bnb', 'default']> &
+    type: Schema.Attribute.Enumeration<['country', 'city', 'bnb', 'default']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.DefaultTo<'default'>;
@@ -660,24 +660,24 @@ export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FaqContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
-    IsDispaly: Schema.Attribute.Boolean &
+    isDisplay: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    ListPageType: Schema.Attribute.Enumeration<
+    listPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -685,11 +685,11 @@ export interface ApiFaqDefaultFaqDefault extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::faq-default.faq-default'
     >;
-    PageName: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
@@ -722,7 +722,7 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FaqContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
@@ -730,16 +730,16 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
-    ListPageType: Schema.Attribute.Enumeration<
+    listPageType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -747,23 +747,23 @@ export interface ApiTagFaqCustomizedTagFaqCustomized
       'oneToMany',
       'api::tag-faq-customized.tag-faq-customized'
     >;
-    PageName: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    TagCode: Schema.Attribute.String &
+    tagCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
@@ -795,16 +795,14 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    list_id: Schema.Attribute.Integer &
+    listId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    list_type: Schema.Attribute.Enumeration<
-      ['city', 'area', 'spot', 'subway']
-    > &
+    listType: Schema.Attribute.Enumeration<['city', 'area', 'spot', 'subway']> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -816,7 +814,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       'oneToMany',
       'api::tag-tdk-customized.tag-tdk-customized'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -825,7 +823,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    metaKeywords: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -834,7 +832,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -843,7 +841,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -852,7 +850,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -861,7 +859,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -870,7 +868,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -882,7 +880,7 @@ export interface ApiTagTdkCustomizedTagTdkCustomized
         maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    tag_code: Schema.Attribute.String &
+    tagCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -923,7 +921,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       'oneToMany',
       'api::tag-tdk-template.tag-tdk-template'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -933,7 +931,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    metaKeywords: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -943,7 +941,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -953,7 +951,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -963,7 +961,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -973,7 +971,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -983,7 +981,7 @@ export interface ApiTagTdkTemplateTagTdkTemplate
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -1027,7 +1025,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
           localized: true;
         };
       }>;
-    FAQContents: Schema.Attribute.Relation<
+    faqContents: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-content.faq-content'
     >;
@@ -1036,7 +1034,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
       'oneToMany',
       'api::tdk-customized-activity.tdk-customized-activity'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1045,7 +1043,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -1057,7 +1055,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
         maxLength: 255;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    type_id: Schema.Attribute.Integer &
+    typeId: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1066,7 +1064,7 @@ export interface ApiTdkCustomizedActivityTdkCustomizedActivity
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    view_id: Schema.Attribute.String &
+    viewId: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1100,7 +1098,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       'oneToMany',
       'api::tdk-customized-index.tdk-customized-index'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1109,7 +1107,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    metaKeywords: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1118,7 +1116,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1127,7 +1125,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1136,7 +1134,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1145,7 +1143,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1154,7 +1152,7 @@ export interface ApiTdkCustomizedIndexTdkCustomizedIndex
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1191,14 +1189,14 @@ export interface ApiTdkCustomizedListTdkCustomizedList
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    list_id: Schema.Attribute.Integer &
+    listId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    list_type: Schema.Attribute.Enumeration<
+    listType: Schema.Attribute.Enumeration<
       ['city', 'area', 'spot', 'subway', 'poi', 'region', 'cruise']
     > &
       Schema.Attribute.Required &
@@ -1212,7 +1210,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       'oneToMany',
       'api::tdk-customized-list.tdk-customized-list'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1221,7 +1219,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.Text &
+    metaKeywords: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1230,7 +1228,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1239,7 +1237,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1248,7 +1246,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1257,7 +1255,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1266,7 +1264,7 @@ export interface ApiTdkCustomizedListTdkCustomizedList
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -1309,7 +1307,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       'oneToMany',
       'api::tdk-customized-view.tdk-customized-view'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1318,7 +1316,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    metaKeywords: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1327,7 +1325,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1336,7 +1334,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1345,7 +1343,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1354,7 +1352,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1363,7 +1361,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -1378,7 +1376,7 @@ export interface ApiTdkCustomizedViewTdkCustomizedView
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    view_id: Schema.Attribute.Integer &
+    viewId: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1412,7 +1410,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::tdk-template.tdk-template'
     >;
-    meta_description: Schema.Attribute.Text &
+    metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1421,7 +1419,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    meta_keywords: Schema.Attribute.String &
+    metaKeywords: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1430,7 +1428,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    meta_title: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1439,7 +1437,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_description: Schema.Attribute.Text &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1448,7 +1446,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50000;
       }>;
-    OG_image: Schema.Attribute.String &
+    ogImage: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1457,7 +1455,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    OG_title: Schema.Attribute.String &
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1466,7 +1464,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_name: Schema.Attribute.String &
+    pageName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
@@ -1477,7 +1475,7 @@ export interface ApiTdkTemplateTdkTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    page_type: Schema.Attribute.Enumeration<
+    pageType: Schema.Attribute.Enumeration<
       [
         'index',
         'list',

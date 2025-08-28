@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "page_name": {
+    "pageName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -26,7 +26,7 @@
       "required": true,
       "unique": true
     },
-    "list_type": {
+    "listType": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -41,7 +41,7 @@
         "subway"
       ]
     },
-    "list_id": {
+    "listId": {
       "type": "integer",
       "pluginOptions": {
         "i18n": {
@@ -50,7 +50,7 @@
       },
       "required": true
     },
-    "tag_code": {
+    "tagCode": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -60,7 +60,7 @@
       "maxLength": 255,
       "required": true
     },
-    "meta_title": {
+    "metaTitle": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -69,7 +69,7 @@
       },
       "maxLength": 255
     },
-    "meta_description": {
+    "metaDescription": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -78,7 +78,7 @@
       },
       "maxLength": 50000
     },
-    "meta_keywords": {
+    "metaKeywords": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -87,7 +87,7 @@
       },
       "maxLength": 255
     },
-    "OG_title": {
+    "ogTitle": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -96,7 +96,7 @@
       },
       "maxLength": 255
     },
-    "OG_description": {
+    "ogDescription": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -105,7 +105,7 @@
       },
       "maxLength": 50000
     },
-    "OG_image": {
+    "ogImage": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "page_name": {
+    "pageName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -26,7 +26,7 @@
       "required": true,
       "unique": true
     },
-    "type_id": {
+    "typeId": {
       "type": "integer",
       "pluginOptions": {
         "i18n": {
@@ -34,7 +34,7 @@
         }
       }
     },
-    "view_id": {
+    "viewId": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -42,7 +42,7 @@
         }
       }
     },
-    "meta_description": {
+    "metaDescription": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -51,7 +51,7 @@
       },
       "maxLength": 50000
     },
-    "FAQContents": {
+    "faqContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"

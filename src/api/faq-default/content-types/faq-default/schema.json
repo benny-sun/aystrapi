@@ -15,21 +15,21 @@
     }
   },
   "attributes": {
-    "PageName": {
+    "pageName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "maxLength": 255,
       "unique": true
     },
-    "ListPageType": {
+    "listPageType": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true,
@@ -40,16 +40,16 @@
         "subway"
       ]
     },
-    "IsDispaly": {
+    "isDisplay": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true
     },
-    "FaqContents": {
+    "faqContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"

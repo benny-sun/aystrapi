@@ -15,22 +15,22 @@
     }
   },
   "attributes": {
-    "PageName": {
+    "pageName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "maxLength": 255,
       "required": true,
       "unique": true
     },
-    "ListPageType": {
+    "listPageType": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true,
@@ -45,22 +45,22 @@
       "type": "integer",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true
     },
-    "TagCode": {
+    "tagCode": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "maxLength": 255,
       "required": true
     },
-    "FaqContents": {
+    "faqContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"

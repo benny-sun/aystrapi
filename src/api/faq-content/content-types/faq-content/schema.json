@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "ContentName": {
+    "contentName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -25,7 +25,7 @@
       "maxLength": 255,
       "unique": true
     },
-    "Question": {
+    "question": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
@@ -34,7 +34,7 @@
       },
       "maxLength": 50000
     },
-    "Answer": {
+    "answer": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {

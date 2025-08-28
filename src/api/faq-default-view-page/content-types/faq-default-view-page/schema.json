@@ -15,21 +15,21 @@
     }
   },
   "attributes": {
-    "PageName": {
+    "pageName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "maxLength": 255,
       "unique": true
     },
-    "Type": {
+    "type": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": false,
@@ -41,16 +41,16 @@
         "default"
       ]
     },
-    "IsDisplay": {
+    "isDisplay": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true
     },
-    "FAQContents": {
+    "faqContents": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq-content.faq-content"
